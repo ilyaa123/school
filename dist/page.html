@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Школа будущего 1-4 калссы</title>
+    <link rel="stylesheet" href="css/default.min.css?_v=20220706232402">
+    <link rel="stylesheet" href="css/header.min.css?_v=20220706232402">
+    <link rel="stylesheet" href="css/footer.min.css?_v=20220706232402">
+    <link rel="stylesheet" href="css/page.min.css?_v=20220706232402">
+    <script src="js/app.min.js?_v=20220706232402" type="module"></script>
 </head>
 <body>
     <header class="header">
     <div class="container">
         <div class="header__text">
-            <picture><source srcset="img/logo.webp" type="image/webp"><img class="header__logo" src="img/logo.png" alt="Школа будущего"></picture>
+            <a href="/"> <picture><source srcset="img/logo.webp" type="image/webp"><img class="header__logo" src="img/logo.png" alt="Школа будущего"></picture></a>
             <div class="header__text-num">
                 <a href="tel:88003003791">8 (800) 300-37-91</a>
                 <button class="btn-default header__text-btn">Записаться на урок</button>
@@ -63,6 +68,92 @@
         </div>
     </div>
 </header>
+    <div class="modal__overlay" style="display: none;">
+        <div class="modal">
+            <div class="close"></div>
+            <form>
+                <input type="text" placeholder="Класс">
+                <input type="name" placeholder="Имя родителя">
+                <input type="phone" placeholder="Телефон родителя">
+                <button type="submit">Оставить заявку</button>
+                <p>Нажимая кнопку, вы даете согласие на обработку своих персональных данных</p>
+            </form>
+        </div>
+    </div>
+    <main class="main">
+        <div class="container">
+            <div class="main__text">
+                <div class="main__text-head">
+                    <div class="main__text-btn">
+                        <button onclick="window.location.href = 'page.html?num=1'">1-4 классы</button>
+                        <button onclick="window.location.href = 'page.html?num=2'">5-8 классы</button>
+                        <button onclick="window.location.href = 'page.html?num=3'">9-11 классы</button>
+                    </div>
+                </div>
+                <div class="main__content">
+                    <div class="main-left">
+                        <h1>Начальная онлайн
+                            школа <span class="span_h"></span></h1>
+                        <p class="main__text-p">Любовь к учебе закладывается в первые годы школы. Поэтому, мы прикладываем максимальные усилия, чтобы сделать образовательный процесс увлекательным и интересным для детей.</p>
+                        <p class="main__text-p-bold">Семейное образование с нами - это эффективно!</p>
+                        <button class="btn-default main__text-button">Записаться на урок</button>
+                        <div class="main__text-link">
+                            <p>или написать: </p>
+                            <a href="#">
+                                <svg width="40" height="40" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="20" cy="20" r="20" fill="#2F89CE"/>
+                                    <path d="M9.3507 20.3741L13.9488 22.0886L15.7413 27.8557C15.8192 28.2454 16.2868 28.3233 16.5985 28.0895L19.1703 25.9853C19.4041 25.7515 19.7938 25.7515 20.1055 25.9853L24.7036 29.3364C25.0154 29.5702 25.483 29.4144 25.5609 29.0247L28.99 12.6587C29.0679 12.269 28.6782 11.8793 28.2886 12.0352L9.3507 19.3609C8.8831 19.5168 8.8831 20.2182 9.3507 20.3741ZM15.5075 21.2313L24.5477 15.6981C24.7036 15.6201 24.8595 15.8539 24.7036 15.9319L17.2999 22.868C17.0661 23.1018 16.8323 23.4135 16.8323 23.8032L16.5985 25.6736C16.5985 25.9074 16.2089 25.9853 16.1309 25.6736L15.1957 22.2445C14.9619 21.8548 15.1178 21.3872 15.5075 21.2313Z" fill="white"/>
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg width="40" height="40" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="20" cy="20" r="20" fill="#48C95F"/>
+                                    <path d="M27.9268 12.0625C25.9512 10.0937 23.3171 9 20.5366 9C14.7561 9 10.0732 13.6667 10.0732 19.4271C10.0732 21.25 10.5854 23.0729 11.4634 24.6042L10 30L15.561 28.5417C17.0976 29.3438 18.7805 29.7812 20.5366 29.7812C26.3171 29.7812 31 25.1146 31 19.3542C30.9268 16.6563 29.9024 14.0312 27.9268 12.0625ZM25.5854 23.1458C25.3659 23.7292 24.3415 24.3125 23.8293 24.3854C23.3902 24.4583 22.8049 24.4583 22.2195 24.3125C21.8537 24.1667 21.3415 24.0208 20.7561 23.7292C18.122 22.6354 16.439 20.0104 16.2927 19.7917C16.1463 19.6458 15.1951 18.4062 15.1951 17.0937C15.1951 15.7812 15.8537 15.1979 16.0732 14.9062C16.2927 14.6146 16.5854 14.6146 16.8049 14.6146C16.9512 14.6146 17.1707 14.6146 17.3171 14.6146C17.4634 14.6146 17.6829 14.5417 17.9024 15.0521C18.122 15.5625 18.6341 16.875 18.7073 16.9479C18.7805 17.0938 18.7805 17.2396 18.7073 17.3854C18.6341 17.5312 18.561 17.6771 18.4146 17.8229C18.2683 17.9687 18.1219 18.1875 18.0488 18.2604C17.9024 18.4062 17.7561 18.5521 17.9024 18.7708C18.0488 19.0625 18.561 19.8646 19.3659 20.5937C20.3902 21.4687 21.1951 21.7604 21.4878 21.9063C21.7805 22.0521 21.9268 21.9792 22.0732 21.8333C22.2195 21.6875 22.7317 21.1042 22.878 20.8125C23.0244 20.5208 23.2439 20.5938 23.4634 20.6667C23.6829 20.7396 25 21.3958 25.2195 21.5417C25.5122 21.6875 25.6585 21.7604 25.7317 21.8333C25.8049 22.0521 25.8049 22.5625 25.5854 23.1458Z" fill="white"/>
+                                </svg>
+                            </a>                       
+                        </div>
+                    </div>
+                    <div class="main-right">
+                        <picture><source srcset="img/main_page.webp" type="image/webp"><img class="main__img" src="img/main_page.png" alt="Картинка"></picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="classes">
+        <div class="container">
+            <h2>Из чего состоит обучение:</h2>
+        </div>
+        <div class="container classes__container">
+        </div>
+    </section>
+    <section class="inside">
+        <div class="container">
+            <h3>Что внутри</h3>
+            <div class="inside__btn">
+                <button class="active" data-name="inside__item-one">Живой урок с учителем</button>
+                <button data-name="inside__item-two">Дополнительный материал</button>
+                <button data-name="inside__item-three">Тренажер</button>
+                <button data-name="inside__item-four">Домашняя работа</button>
+            </div>
+            <div class="inside__item inside__item-one">
+                <picture><source srcset="img/inside_one.webp" type="image/webp"><img src="img/inside_one.png" alt="Картинка"></picture>
+                <p>Но граница обучения кадров требует от нас анализа дальнейших направлений развития. Современные технологии достигли такого уровня, что граница обучения кадров обеспечивает актуальность стандартных подходов. В рамках спецификации современных стандартов, предприниматели в сети интернет могут быть преданы социально-демократической анафеме!</p>
+            </div>
+            <div class="inside__item inside__item-two">
+                <picture><source srcset="img/inside_two.webp" type="image/webp"><img src="img/inside_two.png" alt="Картинка"></picture>
+                <p>Но граница обучения кадров требует от нас анализа дальнейших направлений развития. Современные технологии достигли такого уровня, что граница обучения кадров обеспечивает актуальность стандартных подходов. В рамках спецификации современных стандартов, предприниматели в сети интернет могут быть преданы социально-демократической анафеме!</p>
+            </div>
+            <div class="inside__item inside__item-three">
+                <picture><source srcset="img/inside_three.webp" type="image/webp"><img src="img/inside_three.png" alt="Картинка"></picture>
+                <p>Но граница обучения кадров требует от нас анализа дальнейших направлений развития. Современные технологии достигли такого уровня, что граница обучения кадров обеспечивает актуальность стандартных подходов. В рамках спецификации современных стандартов, предприниматели в сети интернет могут быть преданы социально-демократической анафеме!</p>
+            </div>
+            <div class="inside__item inside__item-four">
+                <picture><source srcset="img/inside_four.webp" type="image/webp"><img src="img/inside_four.png" alt="Картинка"></picture>
+                <p>Но граница обучения кадров требует от нас анализа дальнейших направлений развития. Современные технологии достигли такого уровня, что граница обучения кадров обеспечивает актуальность стандартных подходов. В рамках спецификации современных стандартов, предприниматели в сети интернет могут быть преданы социально-демократической анафеме!</p>
+            </div>
+        </div>
+    </section>
     <footer class="footer">
     <div class="container">
         <div class="footer__container">
@@ -139,4 +230,3 @@
 </footer>
 </body>
 </html>
-    
